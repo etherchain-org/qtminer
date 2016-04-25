@@ -137,7 +137,7 @@ void QtMiner::readyRead()
     // qDebug() << method; 
     if (method == "eth_login") {
       requests.erase(id);
-      cnote << "Login to stratum server successfull";
+      cnote << "Login to stratum server successful";
       sendGetWorkRequest();
     }    
     if (method == "eth_getWork") {
