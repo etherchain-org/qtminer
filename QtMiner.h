@@ -61,7 +61,7 @@ private:
   
 	unsigned m_globalWorkSizeMultiplier = ethash_cl_miner::c_defaultGlobalWorkSizeMultiplier;
 	unsigned m_localWorkSize = ethash_cl_miner::c_defaultLocalWorkSize;
-	unsigned m_msPerBatch = ethash_cl_miner::c_defaultMSPerBatch;
+	unsigned m_msPerBatch = 0; //ethash_cl_miner::c_defaultMSPerBatch;
   
 	// default value is 350MB of GPU memory for other stuff (windows system rendering, e.t.c.)
   

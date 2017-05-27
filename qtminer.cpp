@@ -187,12 +187,13 @@ void QtMiner::startMining() {
     if (!EthashGPUMiner::configureGPU(
         m_localWorkSize,
         m_globalWorkSizeMultiplier,
-        m_msPerBatch,
         m_openclPlatform,
         m_openclDevice,
         m_clAllowCPU,
         m_extraGPUMemory,
-        m_currentBlock
+        m_currentBlock,
+	0,
+	0
       ))
       exit(1);
     EthashGPUMiner::setNumInstances(m_miningThreads);
@@ -210,7 +211,7 @@ void QtMiner::startMining() {
   (void)_recheckPeriod;
   
   f.setSealers(sealers);
-  f.start(_m);
+  f.start(_m,0);
   f.onSolutionFound([&](EthashProofOfWork::Solution sol)
   {
     cnote << "Solution found; Submitting ...";
